@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator</title>
+
+    <link href="kalkulator.css" rel="stylesheet">
+    <script src="kalkulator.js" defer></script>
+</head>
+<body>
+   
+<style>
+    #logofigur {
+    position: fixed;
+    height: 50px;
+    cursor: pointer;
+    padding-left: 12px;
+    padding-top: 31px;
+  }
+  
+  #logo-navbar {
+    height: 50px;
+   }
+   
+  header {
+    background-color: #f2f2f2;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;}
+  nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    margin-right: 10px;}
+  nav a {
+    color: black;
+    background-color: blue;
+    text-decoration: none;
+    padding: 10px;}
+  nav a:hover {
+    background-color:pink;
+    color: #fff;}
+</style>
+
+<img id="logofigur" src="../../bilder/skolehjelpen-logo-kunfigur.png">
+
+  <header>
+    <h1><img id="logo-navbar" src="../../bilder/skolehjelpen-logo.png"></h1>
+    <nav>
+      <ul>
+        <li><a href="../../index.html" id="Hjem"><img id="logo-navbar" src="../../bilder/skole-hjem-logo.png"></a></li>
+        <li><a href="" id="Ekstra"><img id="logo-navbar" src="../../bilder/bøker-fag-logo.png"></a></li>
+        <li><a href="#" id="Ekstra2">Ekstra2</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  
+
+  
+    <div class="calculator-grid">
+        <div class="output">  <!--Operand vil si et tall eller en størrelse som man utfører en matematisk operasjon på-->
+            <div data-previous-operand class="previous-operand"></div>
+            <div data-current-operand class="current-operand"></div>
+        </div>
+        <button data-all-clear class="span-two">AC</button>
+        <button data-delete>DEL</button>  <!--Bruker data i stede for classer for å ikke mikse classer i css med classer som tilhørerr java script. blir lettere å se hvilke deler av html koden som er brukt av javascript og hvilke deler av koden som brukes av css-->
+        <button data-operation>÷</button>  <!--data-OPERATION fordi operation vil si at den har en funksjon. den skal dele i motsetning til feks tall som ikke gjør en matematisk operasjon-->
+        <button data-number>1</button> <!--Data-number fordi det er et nummer4-->
+        <button data-number>2</button>
+        <button data-number>3</button>
+        <button data-operation>*</button>
+        <button data-number>4</button>
+        <button data-number>5</button>
+        <button data-number>6</button>
+        <button data-operation>+</button>
+        <button data-number>7</button>
+        <button data-number>8</button>
+        <button data-number>9</button>
+        <button data-operation>-</button>
+        <button data-number>.</button> <!--. oppfører seg akkurat som et tall i denne sammhhengen, deremd kaller vi den for et number-->
+        <button data-number>0</button>   <!--"span-two fordi den knappen skal også ta opp to plasser som de andre"-->
+        <button data-equals class="span-two">=</button>
+    </div>
+  
+</body>
+</html>

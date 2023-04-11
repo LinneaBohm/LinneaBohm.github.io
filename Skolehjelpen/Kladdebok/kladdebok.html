@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Notatblokk</title>
+  <link rel="stylesheet" href="kladdebok.css">
+
+  <script src="kladdebok.js"></script>
+
+</head>
+<body>
+
+  <style>
+    #logofigur {
+    position: fixed;
+    height: 50px;
+    cursor: pointer;
+    padding-left: 12px;
+    padding-top: 31px;
+  }
+  
+  #logo-navbar {
+    height: 50px;
+   }
+   
+  header {
+    background-color: #f2f2f2;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;}
+  nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    margin-right: 10px;}
+  nav a {
+    color: black;
+    background-color: blue;
+    text-decoration: none;
+    padding: 10px;}
+  nav a:hover {
+    background-color:pink;
+    color: #fff;}
+</style>
+
+<img id="logofigur" src="../bilder/skolehjelpen-logo-kunfigur.png">
+
+  <header>
+    <h1><img id="logo-navbar" src="../bilder/skolehjelpen-logo.png"></h1>
+    <nav>
+      <ul>
+        <li><a href="../index.html" id="Hjem"><img id="logo-navbar" src="../bilder/skole-hjem-logo.png"></a></li>
+        <li><a href="" id="Ekstra"><img id="logo-navbar" src="../bilder/bøker-fag-logo.png"></a></li>
+        <li><a href="#" id="Ekstra2">Ekstra2</a></li>
+      </ul>
+    </nav>
+  </header>
+
+
+
+
+  <header>
+    <h1>Notatblokk</h1>
+  </header>
+  <main>
+    <textarea id="textarea"></textarea>
+  </main>
+  <footer>
+    <button id="save-button">Lagre</button>
+    <button id="clear-button">Slett</button>
+  </footer>
+
+
+</body>
+</html>

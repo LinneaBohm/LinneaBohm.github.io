@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta charset="UTF-8">
+  <title>Skolehjelpen</title>
+
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js"></script>
+</head>
+
+<body>
+
+    <img id="logofigur" src="bilder/skolehjelpen-logo-kunfigur.png">
+
+  <header>
+    <h1><img id="logo-navbar" src="bilder/skolehjelpen-logo.png"></h1>
+    <nav>
+      <ul>
+        <li><a href="index.html" id="Hjem"><img id="her-hjem" src="bilder/skole-hjem-logo.png"></a></li>
+        <li><a href="fagside/fagside.html" id="Ekstra"><img id="logo-navbar" src="bilder/bøker-fag-logo.png"></a></li>
+        <li><a href="Kladdebok/kladdebok.html" id="Ekstra"><img id="logo-navbar" src="bilder/notater-bilde.png"></a></li>
+        <div class="subnav">
+          <li><button class="subnavbtn">Verktøy <i class="fa fa-caret-down"></i> </button></li>
+              <div class="subnav-content">
+                  <a href="#">kalkulator</a>
+                  <a href="#">Timer</a>
+                  <a href="#">Quizlet Cards</a>
+                  <a href="#">Spill!</a>
+      </ul>
+    </nav>
+  </header>
+
+
+    <section id="notater" class="notater-grid">
+      <form>
+        <label for="note-input">Vurderinger:</label>
+        <input type="text" id="note-input">
+        <button type="button" id="save-note-btn">Lagre notat</button>
+      </form>
+      <div id="notes-list"></div>
+    </section>
+
+    <div class="forside-grid"></div>
+  <main id="forside">
+    <section id="hjem">
+      <h2>Her kan det være n overskrift</h2>
+      <p>her kan det være et avsnitt</p>
+    </section>
+
+    </main>
+  </div>
+
+
+  </body>
+  </html>

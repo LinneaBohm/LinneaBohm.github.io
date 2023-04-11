@@ -1,0 +1,105 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+
+  .notater-grid{
+    display: flexbox;
+    justify-content:flex-start;
+    align-content:space-between;
+    min-height:100vh; /*sier at det skal fylle 100% av høyden ehle tiden*/
+    grid-template-columns: repeat(4,100px); /* vi har 4 kolonner og alle skal være 100px lange*/
+    grid-template-rows: minmax(120px,auto) repeat(5,100px); /*auto sier så stort et må være for å få plass til alt*/
+
+  }
+
+  #notes-list{
+    justify-content: end;
+    display: list-item;
+  }
+
+  #logofigur {
+    position: fixed;
+    height: 50px;
+    cursor: pointer;
+    padding-left: 12px;
+    padding-top: 31px;
+  }
+  
+  #logo-navbar {
+    height: 50px;
+   }
+
+   #her-hjem {
+    height: 50px;
+   }
+
+  header {
+    background-color: #f2f2f2;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;}
+  nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    margin-right: 10px;}
+  nav a {
+    color: black;
+    background-color: #f2f2f2;
+    text-decoration: none;
+    padding: 10px;}
+  nav a:hover {
+    background-color: blueviolet;
+ }
+
+ .navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-link {
+  display: block;
+  padding: 1rem;
+}
+
+  
+
+  #forside {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+
+  #hjem{
+    background-color: aqua;
+    
+  }
+ 
+
+  #notater{
+    padding-top: 10px; 
+    padding-left: 10px;
+  }
+
+  #note-input{
+    padding: 50px;
+    background-color: lightyellow;}
+
+  #save-note-btn{
+    padding: 15px;
+    border-radius: 10px;
+    background-color: lightsalmon;
+    font-family: Georgia, 'Times New Roman', serif;
+  }
+
+
+  
+  
+
+ 
+

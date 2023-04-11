@@ -1,0 +1,19 @@
+#fag {
+    background-color: lightgreen;
+  }
+  #fag ul {
+    margin-top: 0;
+  }
+  #fag li {
+    margin-bottom: 10px;
+  }
+  #fag a {
+    color: #333;
+    text-decoration: none;
+    border: 1px solid #333;
+    padding: 5px;
+    border-radius: 5px;}
+
+  #fag a:hover {
+    background-color: #333;
+    color: #fff;}
