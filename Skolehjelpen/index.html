@@ -1,55 +1,156 @@
 <!DOCTYPE html>
 <html lang="no">
 <head>
-  <meta charset="UTF-8">
-  <title>Skolehjelpen</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skolehjelpen</title>
 
-  <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css">
   <script src="script.js"></script>
 </head>
-
 <body>
 
-    <img id="logofigur" src="bilder/skolehjelpen-logo-kunfigur.png">
+<!--Navigasjonsbaren-->
+    <header>
+        <h1><img class="ikon" src="bilder/skolehjelpen-logo.png"></h1>
+        <nav>
+          <ul>
+            <li><a href="index.html"><img class="ikon" src="bilder/skole-hjem-logo.png"></a></li>
+            <li><a href="fagside/fagside.html"><img class="ikon" src="bilder/bøker-fag-logo.png"></a></li>
+            <li><a href="Kladdebok/kladdebok.html"><img class="ikon" src="bilder/notater-bilde.png"></a></li>
+                <li><a href="kalkulator/kalkulator/kalkulator.html"><img class="ikon" src="bilder/kalkulator.png"></a></li>
+              </div>
+          </ul>
+        </nav>
+      </header>
 
-  <header>
-    <h1><img id="logo-navbar" src="bilder/skolehjelpen-logo.png"></h1>
-    <nav>
-      <ul>
-        <li><a href="index.html" id="Hjem"><img id="her-hjem" src="bilder/skole-hjem-logo.png"></a></li>
-        <li><a href="fagside/fagside.html" id="Ekstra"><img id="logo-navbar" src="bilder/bøker-fag-logo.png"></a></li>
-        <li><a href="Kladdebok/kladdebok.html" id="Ekstra"><img id="logo-navbar" src="bilder/notater-bilde.png"></a></li>
-        <div class="subnav">
-          <li><button class="subnavbtn">Verktøy <i class="fa fa-caret-down"></i> </button></li>
-              <div class="subnav-content">
-                  <a href="#">kalkulator</a>
-                  <a href="#">Timer</a>
-                  <a href="#">Quizlet Cards</a>
-                  <a href="#">Spill!</a>
-      </ul>
-    </nav>
-  </header>
+      <style>
+        
+  body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
 
+header {
+    background-color: #f2f2f2;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;}
 
-    <section id="notater" class="notater-grid">
-      <form>
-        <label for="note-input">Vurderinger:</label>
-        <input type="text" id="note-input">
-        <button type="button" id="save-note-btn">Lagre notat</button>
-      </form>
-      <div id="notes-list"></div>
-    </section>
+  nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+  }
 
-    <div class="forside-grid"></div>
-  <main id="forside">
-    <section id="hjem">
-      <h2>Her kan det være n overskrift</h2>
-      <p>her kan det være et avsnitt</p>
-    </section>
+  nav a {
+    background-color: #f2f2f2;
+    padding: 10px;}
 
-    </main>
+  nav a:hover {
+    background-color: rgba(255, 160, 122, 0.256);
+    padding-top: 35px;
+ }
+
+.ikon{
+    height: 50px;
+   }
+</style>
+<!--Navigasjonsbaren til hit-->
+
+<div class="flex-container">
+  <div><section id="notater" class="notater-grid">
+    <form>
+      <label for="note-input">Vurderinger:</label>
+      <input type="text" id="note-input">
+      <button type="button" id="save-note-btn">Lagre notat</button>
+      <button type="button" id="delete-note-btn">Slett alle notater</button>
+    </form>
+    <div id="notes-list"></div>
+  </section></div>
+  <div><div class="clock">
+    <div class="hour-hand"></div>
+    <div class="minute-hand"></div>
+    <div class="second-hand"></div>
+    <div class="center-circle"></div>
+  </div></div>
   </div>
+</div>
 
 
-  </body>
-  </html>
+<script>
+
+function saveNote() {
+  var note = document.getElementById("note-input").value;
+  if (note !== "") {
+    var notesList = localStorage.getItem("notes") ? JSON.parse(localStorage.getItem("notes")) : [];
+    notesList.push(note);
+    localStorage.setItem("notes", JSON.stringify(notesList));
+    document.getElementById("note-input").value = "";
+    showNotes();
+  }
+}
+
+
+function deleteNotes() {
+  localStorage.removeItem("notes");
+    showNotes();
+}
+
+
+function showNotes() {
+  var notesList = localStorage.getItem("notes") ? JSON.parse(localStorage.getItem("notes")) : [];
+  var notesListHTML = "";
+  if (notesList.length > 0) {
+    notesListHTML += "<ul>";
+    for (var i = 0; i < notesList.length; i++) {
+      notesListHTML += "<li>" + notesList[i] + "</li>";
+    }
+    notesListHTML += "</ul>";
+  } else {
+    notesListHTML = "Ingen notater lagret ennå.";
+  }
+  document.getElementById("notes-list").innerHTML = notesListHTML;
+}
+
+showNotes()
+
+document.getElementById("save-note-btn").addEventListener("click", saveNote);
+document.getElementById("delete-note-btn").addEventListener("click", deleteNotes);
+
+</script>
+
+<br>
+
+
+
+<!--footer-->
+
+<style>
+  .footer {
+    font-size: 10px;
+     position: fixed;
+     left: 0;
+     bottom: 0;
+     width: 100%;
+     background-color: rgba(255, 133, 27, 0.533);
+     color: white;
+     text-align: center;
+  }
+  </style>
+  </head>
+  <body>
+  
+  <div class="footer">
+    <h2>Laget av: Linnea Bohm</h2>
+  </div>
+<!--footer-->
+
+<!--Kilder:
+- W-three school
+- Kode 2-->
+</body>
+</html>

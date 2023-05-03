@@ -1,75 +1,28 @@
 
+/*klokke*/
+function setTime() {
+  const now = new Date();
+  const seconds = now.getSeconds();
+  const minutes = now.getMinutes();
+  const hours = now.getHours();
+
+  const secondHand = document.querySelector(".second-hand");
+  const minuteHand = document.querySelector(".minute-hand");
+  const hourHand = document.querySelector(".hour-hand");
+
+  //const secondDegree = (seconds / 60) * 360 + 90;
+  //const minuteDegree = (minutes / 60) * 360 + (seconds / 60) * 6 + 90;
+  //const hourDegree = (hours / 12) * 360 + (minutes / 60) * 30 + 90;
+
+  const secondDegree = (seconds / 60) * 360  ;
+  const minuteDegree = (minutes / 60) * 360 + (seconds / 60) * 6 +180 ;
+  const hourDegree = (hours / 12) * 360 + (minutes / 60) * 30 + 180;
 
 
-const notesPage = document.querySelector('#notes-page');
-const noteInput = document.querySelector('#note-input');
-const saveNoteBtn = document.querySelector('#save-note-btn');
-const notesList = document.querySelector('#notes-list');
-
-// Vis notatsiden når du klikker på notatlenken
-document.querySelector('#notes-link').addEventListener('click', function(event) {
-  event.preventDefault();
-  showPage(notesPage);
-});
-
-// Hent notatene fra Local Storage og vis dem
-function showNotes() {
-  notesList.innerHTML = '';
-  for (let i = 0; i < localStorage.length; i++) {
-    const key = localStorage.key(i);
-    if (key.startsWith('note-')) {
-      const note = localStorage.getItem(key);
-      const noteElem = document.createElement('div');
-      noteElem.textContent = note;
-      notesList.appendChild(noteElem);
-    }
-  }
+  secondHand.style.transform = `rotate(${secondDegree}deg)`;
+  minuteHand.style.transform = `rotate(${minuteDegree}deg)`;
+  hourHand.style.transform = `rotate(${hourDegree}deg)`;
 }
 
-// Lagre notatet i Local Storage og vis notatene
-saveNoteBtn.addEventListener('click', function() {
-  const note = noteInput.value.trim();
-  if (note !== '') {
-    const key = `note-${Date.now()}`;
-    localStorage.setItem(key, note);
-    noteInput.value = '';
-    showNotes();
-  }
-});
-
-// Vis notatene når siden lastes inn
-showNotes();
-
-
-function saveNote() {
-  var note = document.getElementById("note-input").value;
-  if (note !== "") {
-    var notesList = localStorage.getItem("notes") ? JSON.parse(localStorage.getItem("notes")) : [];
-    notesList.push(note);
-    localStorage.setItem("notes", JSON.stringify(notesList));
-    document.getElementById("note-input").value = "";
-    showNotes();
-  }
-}
-
-function showNotes() {
-  var notesList = localStorage.getItem("notes") ? JSON.parse(localStorage.getItem("notes")) : [];
-  var notesListHTML = "";
-  if (notesList.length > 0) {
-    notesListHTML += "<ul>";
-    for (var i = 0; i < notesList.length; i++) {
-      notesListHTML += "<li>" + notesList[i] + "</li>";
-    }
-    notesListHTML += "</ul>";
-  } else {
-    notesListHTML = "Ingen notater lagret ennå.";
-  }
-  document.getElementById("notes-list").innerHTML = notesListHTML;
-}
-
-document.getElementById("save-note-btn").addEventListener("click", saveNote);
-
-window.onload = function() {
-  showNotes();
-};
-
+setInterval(setTime, 1000);
+/*klokke*/

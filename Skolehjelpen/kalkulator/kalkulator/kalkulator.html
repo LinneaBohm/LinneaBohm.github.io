@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator</title>
+
+    <link href="kalkulator.css" rel="stylesheet">
+    <script src="kalkulator.js" defer></script>
+</head>
+<body>
+   
+
+<!--Navigasjonsbaren-->
+<header>
+  <h1><img class="ikon" src="../../bilder/skolehjelpen-logo.png"></h1>
+  <nav>
+    <ul>
+      <li><a href="../../index.html"><img class="ikon" src="../../bilder/skole-hjem-logo.png"></a></li>
+      <li><a href="../../fagside/fagside.html"><img class="ikon" src="../../bilder/bøker-fag-logo.png"></a></li>
+      <li><a href="../../Kladdebok/kladdebok.html"><img class="ikon" src="../../bilder/notater-bilde.png"></a></li>
+          <li><a href="../../kalkulator/kalkulator/kalkulator.html"><img class="ikon" src="../../bilder/kalkulator.png"></a></li>
+        </div>
+    </ul>
+  </nav>
+</header>
+
+<style>
+  
+body {
+font-family: Arial, sans-serif;
+margin: 0;
+padding: 0;
+}
+
+header {
+background-color: #f2f2f2;
+padding: 10px;
+display: flex;
+justify-content: space-between;
+align-items: center;}
+
+nav ul {
+list-style: none;
+padding: 0;
+display: flex;
+}
+
+nav a {
+background-color: #f2f2f2;
+padding: 10px;}
+
+nav a:hover {
+background-color: rgba(255, 160, 122, 0.256);
+padding-top: 35px;
+}
+
+.ikon{
+height: 50px;
+}
+</style>
+<!--Navigasjonsbaren til hit-->
+
+  
+
+  
+    <div class="calculator-grid">
+        <div class="output">  <!--Operand vil si et tall eller en størrelse som man utfører en matematisk operasjon på-->
+            <div data-previous-operand class="previous-operand"></div>
+            <div data-current-operand class="current-operand"></div>
+        </div>
+        <button data-all-clear class="span-two">AC</button>
+        <button data-delete>DEL</button>  <!--Bruker data i stede for classer for å ikke mikse classer i css med classer som tilhørerr java script. blir lettere å se hvilke deler av html koden som er brukt av javascript og hvilke deler av koden som brukes av css-->
+        <button data-operation>÷</button>  <!--data-OPERATION fordi operation vil si at den har en funksjon. den skal dele i motsetning til feks tall som ikke gjør en matematisk operasjon-->
+        <button data-number>1</button> <!--Data-number fordi det er et nummer4-->
+        <button data-number>2</button>
+        <button data-number>3</button>
+        <button data-operation>*</button>
+        <button data-number>4</button>
+        <button data-number>5</button>
+        <button data-number>6</button>
+        <button data-operation>+</button>
+        <button data-number>7</button>
+        <button data-number>8</button>
+        <button data-number>9</button>
+        <button data-operation>-</button>
+        <button data-number>.</button> <!--. oppfører seg akkurat som et tall i denne sammhhengen, deremd kaller vi den for et number-->
+        <button data-number>0</button>   <!--"span-two fordi den knappen skal også ta opp to plasser som de andre"-->
+        <button data-equals class="span-two">=</button>
+    </div>
+  
+</body>
+</html>

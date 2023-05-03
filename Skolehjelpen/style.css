@@ -1,105 +1,83 @@
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-  }
+body{
+  background-color:#f2f2f2;
 
-  .notater-grid{
-    display: flexbox;
-    justify-content:flex-start;
-    align-content:space-between;
-    min-height:100vh; /*sier at det skal fylle 100% av høyden ehle tiden*/
-    grid-template-columns: repeat(4,100px); /* vi har 4 kolonner og alle skal være 100px lange*/
-    grid-template-rows: minmax(120px,auto) repeat(5,100px); /*auto sier så stort et må være for å få plass til alt*/
+}
 
-  }
-
-  #notes-list{
-    justify-content: end;
-    display: list-item;
-  }
-
-  #logofigur {
-    position: fixed;
-    height: 50px;
-    cursor: pointer;
-    padding-left: 12px;
-    padding-top: 31px;
-  }
-  
-  #logo-navbar {
-    height: 50px;
-   }
-
-   #her-hjem {
-    height: 50px;
-   }
-
-  header {
-    background-color: #f2f2f2;
-    padding: 10px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;}
-  nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    margin-right: 10px;}
-  nav a {
-    color: black;
-    background-color: #f2f2f2;
-    text-decoration: none;
-    padding: 10px;}
-  nav a:hover {
-    background-color: blueviolet;
- }
-
- .navbar {
+.flex-container{
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  background-color: transparent;
 }
 
-.nav-link {
-  display: block;
-  padding: 1rem;
+.flex-container > div{
+  background-color: transparent ;
+  margin: 10px;
+  padding: 20px;
+  font-size: 30px;
 }
 
+
+#notes-list{
+  justify-content: end;
+}
+
+#notater{
+  padding-top: 10px; 
+  padding-left: 10px;
+}
+
+#note-input{
+  padding: 50px;
+  background-color: lightyellow;}
+
+#save-note-btn,#delete-note-btn{
+  padding: 15px;
+  border-radius: 10px;
+  background-color: lightsalmon;
+  font-family: Georgia, 'Times New Roman', serif;
+}
+.clock {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  border: 2px solid black;
+  border-radius: 50%;
+  margin: 50px auto;
+  background-color: white;
+}
+
+.second-hand,.hour-hand,.minute-hand {
+position: absolute;
+  width: 4px;
+  background-color: black;
+  transform-origin: bottom center;
+  left: 50%;
+  margin-left: -2px;
+}
+
+.second-hand {
+  margin-top: 20px;
+  height: 80px;
+}
+
+.hour-hand {
+  margin-top: 27px;
+  height: 70px;
+}
+
+.minute-hand {
+  margin-top: 37px;
+  height: 60px;
+}
+
+.center-circle {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  background-color: black;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  margin-top: -6px;
+  margin-left: -6px;
+}
   
-
-  #forside {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-  }
-
-  #hjem{
-    background-color: aqua;
-    
-  }
- 
-
-  #notater{
-    padding-top: 10px; 
-    padding-left: 10px;
-  }
-
-  #note-input{
-    padding: 50px;
-    background-color: lightyellow;}
-
-  #save-note-btn{
-    padding: 15px;
-    border-radius: 10px;
-    background-color: lightsalmon;
-    font-family: Georgia, 'Times New Roman', serif;
-  }
-
-
-  
-  
-
- 
-

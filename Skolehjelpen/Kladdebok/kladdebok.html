@@ -8,69 +8,61 @@
   <script src="kladdebok.js"></script>
 
 </head>
-<body>
+<!--Navigasjonsbaren-->
+<header>
+  <h1><img class="ikon" src="../bilder/skolehjelpen-logo.png"></h1>
+  <nav>
+    <ul>
+      <li><a href="../index.html"><img class="ikon" src="../bilder/skole-hjem-logo.png"></a></li>
+      <li><a href="../fagside/fagside.html"><img class="ikon" src="../bilder/bøker-fag-logo.png"></a></li>
+      <li><a href="../Kladdebok/kladdebok.html"><img class="ikon" src="../bilder/notater-bilde.png"></a></li>
+          <li><a href="../kalkulator/kalkulator/kalkulator.html"><img class="ikon" src="../bilder/kalkulator.png"></a></li>
+        </div>
+    </ul>
+  </nav>
+</header>
 
-  <style>
-    #logofigur {
-    position: fixed;
-    height: 50px;
-    cursor: pointer;
-    padding-left: 12px;
-    padding-top: 31px;
-  }
+<style>
   
-  #logo-navbar {
-    height: 50px;
-   }
-   
-  header {
-    background-color: #f2f2f2;
-    padding: 10px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;}
-  nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    margin-right: 10px;}
-  nav a {
-    color: black;
-    background-color: blue;
-    text-decoration: none;
-    padding: 10px;}
-  nav a:hover {
-    background-color:pink;
-    color: #fff;}
+body {
+font-family: Arial, sans-serif;
+margin: 0;
+padding: 0;
+}
+
+header {
+background-color: #f2f2f2;
+padding: 10px;
+display: flex;
+justify-content: space-between;
+align-items: center;}
+
+nav ul {
+list-style: none;
+padding: 0;
+display: flex;
+}
+
+nav a {
+background-color: #f2f2f2;
+padding: 10px;}
+
+nav a:hover {
+background-color: rgba(255, 160, 122, 0.256);
+padding-top: 35px;
+}
+
+.ikon{
+height: 50px;
+}
 </style>
+<!--Navigasjonsbaren til hit-->
 
-<img id="logofigur" src="../bilder/skolehjelpen-logo-kunfigur.png">
+<h1>Kladdebok</h1>
 
-  <header>
-    <h1><img id="logo-navbar" src="../bilder/skolehjelpen-logo.png"></h1>
-    <nav>
-      <ul>
-        <li><a href="../index.html" id="Hjem"><img id="logo-navbar" src="../bilder/skole-hjem-logo.png"></a></li>
-        <li><a href="" id="Ekstra"><img id="logo-navbar" src="../bilder/bøker-fag-logo.png"></a></li>
-        <li><a href="#" id="Ekstra2">Ekstra2</a></li>
-      </ul>
-    </nav>
-  </header>
-
-
-
-
-  <header>
-    <h1>Notatblokk</h1>
-  </header>
   <main>
     <textarea id="textarea"></textarea>
   </main>
-  <footer>
-    <button id="save-button">Lagre</button>
-    <button id="clear-button">Slett</button>
-  </footer>
 
 
 </body>
